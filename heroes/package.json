@@ -1,0 +1,15 @@
+{
+  "name": "heroes",
+  "version": "1.0.0",
+  "description": "Tour Of Heroes Tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "ng new angular-tour-of-heroes"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^10.0.5"
+  }
+}

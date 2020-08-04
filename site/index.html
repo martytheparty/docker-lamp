@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Up For LAMP Development </title>
+    <style>
+      img, video {
+        width: 100%
+      }
+    </style>
+</head>
+<body>
+  <h1>Local LAMP Development With Docker</h1>
+  <h2>What is LAMP?</h2>
+
+  <h3>Linux</h3>
+  <p>
+    Linux is a family of open source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. 
+  </p>
+
+  <h3>Angular</h3>
+  <p>
+    Linux is a family of open source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. 
+  </p>
+
+  <h3>MySQL</h3>
+  <p>
+    MySQL is an open-source relational database management system.
+  </p>
+
+  <h3>PHP</h3>
+  <p>
+    PHP is a general-purpose scripting language that is especially suited to web development.
+  </p>
+
+  <h2>What is Docker?</h2>
+  <p>
+    Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
+  </p>
+  <h2>PreReqs - assumptions</h2>
+  <h3>Docker Is Installed</h3>
+  <p class="terminal">
+        docker -v
+  </p>
+  <h3>Node Is Installed</h3>
+  <p class="terminal">
+        node -v
+  </p>
+  <h3>NPM Is Installed</h3>
+  <p class="terminal">
+        npm -v
+  </p>
+  <h2>Build - Angular Tour Of Heroes</h2>
+  <h3>Create A NPM Project</h3>
+  <ul>
+    <li>Enter "npm init"</li>
+    <li>enter a name ("heroes")</li>
+    <li>select the defaults</li>
+    <li>select "yes" for ok</li>
+  </ul>
+  <img src="npm-init.png"/>
+  <h3>Install The Angular CLI</h3>
+  <p>
+    Install the Angular CLI so it will be easy to create the Tour Of Heros Project.  
+    I usually install the CLI as a dev not a global dependant.
+    Most tutorials expect you to install the CLI as a global dependant.
+    I find it easier to manage multiple projects with different versions  of the CLI
+    by installing them as local dependant.
+  </p>
+
+  <ul>
+    <li>npm i @angular/cli --save-dev</li>
+  </ul>
+
+  <h3>Add A NPM Script To Create An Application</h3>
+  <img src="create-tour-of-heroes-application.png"/>
+
+  <p>
+    <div>Notes:</div>
+    <ul>
+      <li>Add a new script entry on line 8 of the package.json file.</li>
+      <li>Execute the script in the terminal.</li>
+      <li>Answer No To Routing</li>
+      <li>Select CSS</li>
+    </ul>
+  </p>
+
+  <h3>Create The Application</h3>
+
+  <ul>
+    <li>npm run create</li>
+  </ul>
+
+  <img src="create-tour-of-heroes-application2.png"/>
+
+  <h3>Run The Application</h3>
+
+  <ul>
+    <li>npm start</li>
+  </ul>
+
+  <p>
+    Note: your terminal must be in the angular-tour-of-heroes directory.
+  </p>
+
+  <img src="start-tour-of-heroes-application.png"/>
+
+  <p>
+    The generated application.
+  </p>
+
+  <img src="start-tour-of-heroes-application2.png"/>
+
+  <h3>
+    Setup The Project.
+  </h3>
+
+  <video src="initial-toh-setup.mp4" controls></video>
+
+  <h2>Setup Docker - Linux-AMP</h2>
+  <p>
+    docker run -ti -v "$PWD"/mysql:/var/lib/mysql -v "$PWD"/dist:/var/www/ -v "$PWD"/apache:/etc/apache2 --name lamp --network host ubuntu:16.04 bash
+  </p>
+  <img src="create-docker.png"/>
+  <ul>
+    <li>docker run -ti (execute a container with interactive terminal flags)</li>
+    <li>-v "$PWD"/mysql:/var/lib/mysql (map the current directory + "/mysql" on the host to "/var/lib/mysql" in the container)</li>
+    <li>-v "$PWD"/dist:/var/www/ (map the host dist directory (where angular builds) to the container's www directory (where apache serve static files) )</li>
+    <li>--name lamp (name of the container)</li>
+    <li>--network host (map the host ports to the container ports directly)</li>
+    <li>ubuntu:16.04 (docker image to create the container from)</li> 
+    <li>bash (the program to execute on start up)</li>
+
+
+  </ul>
+  <h2>Setup PHP - LAM-PHP</h2>
+  <h2>Setup MySQL - LA-MySQL-P</h2>
+  <h2>Connect PHP and MySQL</h2>
+  <h2>Connect Angular and PHP/MySQL</h2>
+</body>
+</html>
