@@ -141,10 +141,29 @@
     <li>--network host (map the host ports to the container ports directly)</li>
     <li>ubuntu:16.04 (docker image to create the container from)</li> 
     <li>bash (the program to execute on start up)</li>
-
-
   </ul>
   <h2>Setup PHP - LAM-PHP</h2>
+  <h3>Start And Interact With The Container</h3>
+  <ul>
+    <li>docker ps (see if lamp is running)</li>
+    <li>if lamp is listed done</li>
+    <li>docker ps -a (see if lamp exists)</li>
+    <li>if lamp does not exist Setup Docker</li>
+    <li>docker start lamp (start the lamp container)</li>
+    <li>docker exec -it lamp bash</li>
+  </ul>
+  <video src="start-and-interact-docker.mp4" controls></video>
+  <h3>Install Apache In The Container</h3>
+  <ul>
+    <li>apt-get update</li>
+    <li>apt-get install nano</li>
+    <li>apt-get install apache2</li>
+    <li>service apache2 start</li>
+    <li>cd /etc/apache2</li>
+    <li>nano apache2.conf</li>
+    <li>go to last line and add "ServerName localhost</li>
+    <li>stop (service apache2 stop) and start (service apache2 start) apache</li>
+  </ul>
   <h2>Setup MySQL - LA-MySQL-P</h2>
   <h2>Connect PHP and MySQL</h2>
   <h2>Connect Angular and PHP/MySQL</h2>
