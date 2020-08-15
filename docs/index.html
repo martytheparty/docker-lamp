@@ -127,6 +127,11 @@
   <p><a href="https://angular.io/tutorial/toh-pt1">https://angular.io/tutorial/toh-pt1</a></p>
   <video src="hero-editor.mp4" controls></video>
 
+  <h3>
+    Display a List.
+  </h3>
+
+  <p><a href="https://angular.io/tutorial/toh-pt1">https://angular.io/tutorial/toh-pt2</a></p>
 
   <h2>Setup Docker - Linux-AMP</h2>
   <p>
@@ -164,6 +169,18 @@
     <li>go to last line and add "ServerName localhost</li>
     <li>stop (service apache2 stop) and start (service apache2 start) apache</li>
   </ul>
+  <video src="install-apache.mp4" controls></video>
+  <h3>Install PHP In The Container</h3>
+  <ul>
+    <li>apt-get update</li>
+    <li>stop and start apache</li>
+    <li>apt-get install php libapache2-mod-php php-mcrypt php-mysql</li>
+    <li>go to cd /var/www/html</li>
+    <li>nano info.php</li> 
+    <li>&lt;?php phpinfo() ?&gt;</li>
+    <li>restart apache (service apache2 restart) and go to http://localhost/info.php</li>
+  </ul>
+  <video src="install-php.mp4" controls></video>
   <h2>Setup MySQL - LA-MySQL-P</h2>
   <h2>Connect PHP and MySQL</h2>
   <h2>Connect Angular and PHP/MySQL</h2>
